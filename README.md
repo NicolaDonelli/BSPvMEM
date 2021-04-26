@@ -1,2 +1,8 @@
 # BSPvMEM
-A Bayesia Semiparametric vector Multiplicative Error Model
+#### A Bayesian Semiparametric vector Multiplicative Error Model 
+
+The purpose of this research line is to generalize the semiparametric Bayesian MEM of Mira and Solgi (2013) to a multivariate setting, namely vector MEM (vMEM). In the proposed vMEM, the positive vector xt, given the information set available at time t - 1, is modeled as
+$$
+x_t = \mu_{t} \cdot \varepsilon_t
+$$
+In the vMEM literature the components of the vector of innovations, $\varepsilon_t$, are typically modeled with Gamma distributions (with a single free parameter to ensure unit mean), and the specification of the conditional mean $\mu_t$ depends on the specific application. In our approach, the vector of innovations $\varepsilon_t$ is an i.i.d. process from a unit mean multivariate distribution supported on the positive orthant and we model this distribution nonparametrically, using a Dirichlet process mixture of multivariate log-Normal distributions. We also propose a general parametric model for the conditional mean $\mu_t$ that nests most of the specifications used in the vMEM literature. This model could be used to study the dynamic interactions among dfferent volatility measures or among volatilities in different market indices (just to mention two possible applications). To perform Bayesian inference we first expand the parameter space, considering an unidentifiable model with a non-unit mean parameter for the innovations. We then apply the slice sampler algorithm to the parameter-expanded model and finally post-process this sample to obtain a sample from the posterior of original model. In order to effciently sample from the full-conditional distribution of the parameters of the conditional mean, an adaptive version of the Metropolis Adjusted Langevin Algorithm is used.
